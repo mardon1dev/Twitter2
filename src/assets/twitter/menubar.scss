@@ -1,0 +1,208 @@
+.menu{
+    position: sticky;
+    height: 100vh;
+    top: 0;
+    z-index: 3;
+    flex: 1;
+}
+
+.menubar{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid #D8D8D8;
+    &-twitter{
+        & svg{
+            width: 40px;
+            height: 40px;
+            color: #0a7dd6;
+        }
+        margin-bottom: 50px;
+    }
+    &__list{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 34px;
+        padding-left: 0;
+    } 
+    &__button{
+        max-width: 230px;
+        width: 100%;
+        padding: 15px 90px;
+        background-color: #1D9BF0;
+        color: #fff;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
+        border-radius: 27.5px;
+        margin-top: 30px;
+        text-decoration: none;
+        box-shadow: rgba(0, 0, 0, 0.08) 0px 8px 28px;
+        cursor: pointer;
+        &:hover{
+            color: #fff;
+            background-color: #0a7dd6;
+        }
+    }
+    &__author{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #000;
+        justify-self: end;
+        & img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        &--info{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            & h4, span{
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 21px;
+            }
+            & span{
+                opacity: 0.6;
+            }
+        }
+        & .threedot{
+            transform: rotate(90deg);
+            width: 50px;
+            height: 30px;
+        }
+    }
+    &__tweet2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #1D9BF0;
+        display: none;
+    }
+}
+
+.menu__list--link{
+    & a{
+        text-decoration: none;
+        color: black;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        &.active{
+            & svg{
+                width: 30px;
+                height: 30px;
+                color: #0a7dd6;
+                position: relative;
+               
+            }
+           & span{
+            color: #0a7dd6;
+           }
+           
+        }
+        & svg {
+            width: 25px;
+            height: 25px;
+        }
+        & span{
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+}
+@media screen and (max-width:1200px) {
+
+    .menu__list--link {
+        & a {
+            & span{
+                display: none;
+            }
+        }
+    }
+
+    .menubar{
+        align-items: center;
+        &__button{
+            display: none;
+        }
+        &__list{
+            align-items: center;
+        }
+        &__tweet2{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        color: white;
+        font-size: 26px;
+        margin-top: 30px;
+        padding: 20px 0;
+        }
+    }
+}
+@media screen and (max-width:992px) {
+    .menu{
+        flex: 0.5;
+    }
+}
+@media screen and (max-width:500px) {
+    .menu{
+        position: fixed;
+        width: 100%;
+        height: 8vh;
+        z-index: 5;
+        top: 92.2%;
+        background-color: #fff;
+        flex: 0;
+    border-top: 1px solid #D8D8D8;
+
+    }   
+    .menubar{
+        flex-direction: row;
+        width: 100%;
+        height: 8vh;
+        justify-content: space-between;
+        padding-bottom: 0;
+        &-twitter{
+            display: none;
+        }
+        &__list{
+            flex-direction: row;
+            justify-content: space-around;
+            gap: 0;
+            width: 100%;
+            padding-left: 0;
+            margin-bottom: 0;
+            & li:nth-child(n+6){
+                display: none;
+            }
+        }
+        &__author{
+            display: none;
+        }
+        &__tweet2{
+            position: absolute;
+            top: -70px;
+            width: 60px;
+            height: 60px;
+            right: 30px;
+            margin-left: 0;
+            color: white;
+            font-size: 24px;
+            margin-top: 0;
+            padding: 0;
+        }
+    }
+}
